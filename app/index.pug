@@ -1,0 +1,254 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet" href="css/style.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Yeseva+One&display=swap" rel="stylesheet")
+        
+    body
+        header.header
+            .container.header__content
+                a.logo(href="#") 
+                    img.logo__img(src="images/logo-header.png", alt="logo")
+                nav.nav.header__nav.nav__mobile
+                    ul.nav__list.header__list
+                        -
+                            let list = ['Про нас', 'Каталог','Команда', 'Відгуки', 'Курси', 'Контакти']
+                        each item in list
+                            li.nav__item
+                                a.nav__link(href="#")=item      
+                a.phone(href='tel:+4565789876') +45 65 78 98 76
+                label.burger(for="burger")
+                    input.burger__list(type="checkbox" id="burger")
+                    span.burger__item
+                    span.burger__item
+                    span.burger__item
+                    span.burger__item
+                    span.burger__item
+        main.main
+            section.cover
+                .container.cover__inner
+                    .cover__content
+                        h1.cover__title Створіть атмосферу затишку та гармонії!
+                        p.cover__text
+                            |Створіть особливу атмосферу у своєму домі з нашою екологічно чистою та якісною продукцією зі 100% натуральної соєвого воску.
+                        button.cover__btn(href="#") Купити
+                    picture.cover__picture
+                        source(srcset="images/cover-small.png", media="(max-width: 360px)")
+                        source(srcset="images/cover-middle.png", media="(max-width: 480px)")
+                        img.cover__img(src="images/cover-large.png", alt="")
+            section.about
+                .container.about__inner
+                    .about__content
+                        h2.about__title Про нас
+                        p.about__text
+                            |Богдан творець бренду який завжди зацікавлений у виготовленні різноманітних речей вдома. Він регулярно експериментував з різними матеріалами та інструментами, спробувавши свої сили у багатьох галузях, включаючи виготовлення свічок.
+                            br
+                            br
+                            |Ссоєвий віск виготовляють із соєвих бобів, що зрощуються в Данії, і цей вид воску є екологічно чистим та безпечним для здоров'я.
+                    .about__list
+                        figure.about__item
+                            img.about__img--l(src="images/about-1.png", alt="")
+                            figcaption.about__caption Насолоджуйтеся моментом
+                        figure.about__item
+                            img.about__img--b(src="images/about-2.png", alt="")
+                            figcaption.about__caption Створіть улюблену атмосферу
+                        figure.about__item
+                            img.about__img--l(src="images/about-3.png", alt="")
+                            figcaption.about__caption Виготовлені з любов'ю
+            section.products.section
+                .container.section__inner
+                    .products__descr.section__descr
+                        h2.products__title.section__title Наші товари
+                        p.products__text.section__text Ми використовуємо тільки найкращі якісні матеріали: соєвий віск, віскові барвники, високоякісні ароматичні олії та бавовняні фітільці. Відтінки свічок дуже гармонійно поєднуються з ароматом, створюючи незабутню атмосферу у вашому домі.
+                    .products__content.section__content.section__decor 
+                        -
+                            var products = [["images/product-1.jpeg", "10$", '"Сердечко кохання"', "Запах: ніжний аромат троянди та ванілі.","Для чого: для атмосфери романтичного настрою"],
+                                        ["images/product-2.png", "20$", '"Вихір кохання"', "Запах: ніжний аромат лаванди. ","Для чого: для створення атмосфери затишку "],
+                                        ["images/product-3.jpeg", "10$", '"Веселка"', "Запах: Свіжий аромат лайма. ","Для чого: для енергії та свіжості в приміщені."],
+                                        ["images/product-4.jpeg", "10$", '"Жіноча чарівність"', "Запах: ніжний аромат лаванди та фрезій. ","Для чого: для затишку та комфорту."]]                                            
+                         
+                        each item in products
+                            .products__card
+                                .products__item
+                                    .products__item-img
+                                        |
+                                        |
+                                        img.products__item-img--hover(src=item[0], alt="")
+                                    .products__item-price=item[1]
+                                    h4.products__item-title=item[2]
+                                    p.products__item-text=item[3]
+                                    p.products__item-text=item[4]
+                                button.button Купити
+            section.steps.section
+                .container.section__inner
+                    .steps__descr.section__descr
+                        h2.steps__title.section__title Етапи створення свічок
+                        p.steps__text.section__text Створення свічки із соєвого воску може складатися з наступних етапів:
+                    ol.steps__content.section__content.section__decor 
+                        -
+                            var steps = [["images/step-1.jpeg", "Підготовка матеріалів: дрібні фрагменти соєвого воску, фітіль для свічки, ароматизатори, барвники та інші додаткові матеріали.","right"],
+                                        ["images/step-2.jpeg", "Підготовка форми: вибір форми для свічки та підготовка її до наповнення воском.","right"],
+                                        ["images/step-3.jpeg", "Приготування воску: розплавлення соєвого воску у плавильному пристрої до потрібної температури. Додавання ароматизаторів та барвників за необхідності.","left"],
+                                        ["images/step-4.jpeg", "Підготовка фітіля: вставлення фітіля до форми та зафіксування його так, щоб він був рівномірно напружений.","left"],
+                                        ["images/step-5.jpeg", "Підготовка матеріалів: дрібні фрагменти соєвого воску, фітіль для свічки, ароматизатори, барвники та інші додаткові матеріали.","right"],
+                                        ["images/step-6.jpeg", "Наповнення форми: воск налити до форми, поки вона не заповниться повністю. Чекати, доки він затвердіє.","right"],
+                                        ["images/step-7.jpeg", "Приготування воску: розплавлення соєвого воску у плавильному пристрої до потрібної температури. Додавання ароматизаторів та барвників за необхідності.","left"],
+                                        ["images/step-8.jpeg", "Підготовка фітіля: вставлення фітіля до форми та зафіксування його так, щоб він був рівномірно напружений.","left"],
+                                        ["images/step-9.jpeg", "Підготовка матеріалів: дрібні фрагменти соєвого воску, фітіль для свічки, ароматизатори, барвники та інші додаткові матеріали.","right"],
+                                        ["images/step-10.jpeg", "Наповнення форми: воск налити до форми, поки вона не заповниться повністю. Чекати, доки він затвердіє.","right"]]
+                         
+                        each item in steps
+                            li.steps__card(class=`steps__card--${item[2]}`)
+                                p.steps__card-text=item[1]
+                                img.steps__card-img(src=item[0], alt="")
+            section.courses.section
+                .container.section__inner
+                    .courses__descr.section__descr
+                        h2.courses__title.section__title Наші курси
+                        p.courses__text.section__text Наші курси дозволяють зробити перший крок в новій кар'єрі або поглибити знання в своїй галузі, розвиватися як професіонал, а також покращити якість свого життя. 
+                    .courses__content.section__content.section__decor
+                        -
+                            var products = [["images/courses-1.jpeg","Основи виготовлення свічок"," - 20 год","40$", "Основи виготовлення свічок", "Будем навчати основам виготовлення свічок з різних матеріалів."],
+                                            ["images/courses-2.jpeg","Мистецтво ароматерапії"," - 20 год","40$", "Мистецтво ароматерапії", "Будем  вивчати мистецтво ароматерапії та виготовлення свічок з різними ароматами."]]                                            
+                         
+                        each item in products
+                            .courses__card
+                                .products__item
+                                    .courses__picture
+                                        |
+                                        |
+                                        img.courses__picture-img(src=item[0], alt="")
+                                        p.courses__picture-title=item[1]
+                                        p.courses__picture-time='Навчання'
+                                            span.courses__picture-time--span=item[2]
+                                        p.courses__picture-price='Ціна - '+item[3]
+                                    h4.products__item-title.courses__item-title=item[4]
+                                    p.products__item-text.courses__item-text=item[5]
+                                button.button.button-long Купити курс
+            section.team.section
+                .container.section__inner
+                    .team__descr.section__descr
+                        h2.team__title.section__title Наші викладачі
+                        p.team__text.section__text Ці люди працюють разом, щоб створювати курси для вас, які допоможуть вам почати власний бізнес або хоббі.
+                    .team__content
+                        -
+                            var products = [["images/team-1.jpeg", "Викладач Богдан", "Має досвід викладання і роботи 4 роки"],
+                                        ["images/team-2.jpeg", "Викладач  Анна", "Має досвід викладання і роботи 6 років"],
+                                        ["images/team-3.jpeg", "Викладач  Галина", "Навчає сфері дизайну та декорування"],
+                                        ["images/team-4.jpeg", "Маркетолог  Ольга", "Допоможе вам з рекламою"]]                                            
+                         
+                        each item in products
+                            .team__item
+                                |
+                                |
+                                img.team__img(src=item[0], alt="")
+                                .team__box
+                                    h4.team__box-name=item[1]
+                                    p.team__box-descr=item[2]
+            section.feedback.section
+                .container.section__inner.feedback__inner
+                    .feedback__descr.section__descr
+                        h2.feedback__title.section__title Відгуки від клієнтів
+                        p.feedback__text.section__text Наші покупці мають різний вік, статус, заняття і інтереси, але у них є одна спільна риса - вони прагнуть до гармонії і знаходять радість у маленьких радощах життя, які створюють атмосферу затишку та гармонії у їхньому домі.
+                    .feedback__content.section__decor
+                        .feedback__swiper    
+                                swiper-container.feedback__swiper-wrapper(pagination={clickable:true})
+                                    -
+                                        var products = [["images/feedback-1.jpeg","images/instagram.png","Іван Пилипенко",'Я замовив свічку в формі сердечка на День Святого Валентина для моєї дівчини і вона була просто неймовірна! Запах був дуже приємним і романтичним, а форма сердечка була досконалою для цього свята. Моя дівчина була дуже задоволена подарунком, і я точно замовлю ще свічок від цього сайту!"'],
+                                                        ["images/feedback-1.jpeg","images/instagram.png","Roman Targarian",'Я замовив свічку в формі сердечка на День Святого Валентина для моєї дівчини і вона була просто неймовірна! Запах був дуже приємним і романтичним, а форма сердечка була досконалою для цього свята. Моя дівчина була дуже задоволена подарунком, і я точно замовлю ще свічок від цього сайту!"'],
+                                                        ["images/feedback-1.jpeg","images/facebook.png","Kolya Lanister",'Я замовив свічку в формі сердечка на День Святого Валентина для моєї дівчини і вона була просто неймовірна! Запах був дуже приємним і романтичним, а форма сердечка була досконалою для цього свята. Моя дівчина була дуже задоволена подарунком, і я точно замовлю ще свічок від цього сайту!"'],
+                                                        ["images/feedback-1.jpeg","images/facebook.png","Kolya Lanister",'Я замовив свічку в формі сердечка на День Святого Валентина для моєї дівчини і вона була просто неймовірна! Запах був дуже приємним і романтичним, а форма сердечка була досконалою для цього свята. Моя дівчина була дуже задоволена подарунком, і я точно замовлю ще свічок від цього сайту!"']]                                            
+                                    each item in products
+                                        swiper-slide.feedback__swiper-slide
+                                            .feedback__slide
+                                                .feedback__slide-video
+                                                    img.feedback__slide-video-picture(src=item[0], alt="")
+                                                    button.feedback__slide-video-btn
+                                                        img.feedback__slide-video-btn-icon(src='images/feedback-play-video.svg', alt="")
+                                                .feedback__slide-inner
+                                                    a.feedback__slide-link(href="#")
+                                                        img.feedback__slide-icon(src=item[1], alt="")                                                
+                                                    p.feedback__slide-name=item[2]
+                                                    p.feedback__slide-text=item[3]
+                                                    button.button-long.feedback__slide-btn Купити цей товар
+            section.certificate.section
+                .container.section__inner
+                    .certificate__descr.section__descr
+                        h2.certificate__title.section__title Сертифікати якості
+                        p.certificate__text.section__text Сертифікати забезпечують додаткову довіру та впевненість для наших клієнтів.
+                    .certificate__content.section__decor
+                        .certificate__swiper   
+                                swiper-container.certificate__swiper-wrapper( init=false)
+                                    -
+                                        var products = [["images/certificate-1.jpeg"],
+                                                        ["images/certificate-2.jpeg"],
+                                                        ["images/certificate-3.jpeg"],
+                                                        ["images/certificate-4.jpeg"]]                              
+                                    each item in products
+                                        swiper-slide.certificate__swiper-slide
+                                            img.certificate__swiper-img(src=item[0], alt="")                                            
+            section.faq.section
+                .container.section__inner
+                    .faq__descr.section__descr
+                        h2.faq__title.section__title Часті запитання
+                    .faq__content
+                        .accordeon
+                            -
+                                var products = [["Які запахи доступні для свічок?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Як довго горять свічки?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Чи можна зробити замовлення на індивідуальний дизайн свічки?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Які є варіанти доставки?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Як оплачувати замовлення?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Як довго триває курс?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Яка ціна на курс?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>'],
+                                                ["Чи є сертифікат на курс?",'<ol class="accordeon__list">  <li class="accordeon__list-item">Ваніль - теплий, сладкий і затишний аромат, який нагадує про домашній затишок. </li>    <li class="accordeon__list-item">Лаванда - приємний, успокійливий і релаксуючий запах, який допомагає зняти стрес і напругу.</li>  <li class="accordeon__list-item">Рожевий грейпфрут - свіжий, фруктовий і енергійний аромат, який допомагає підняти настрій і збадьорити.</li>  <li class="accordeon__list-item">Кедр - деревний, земний і маскулінний аромат, який надає відчуття стабільності і надійності.</li>  <li class="accordeon__list-item">Яблуко і кориця - теплий і затишний аромат, який нагадує про зимові свята і домашність.</li></ol>']]                                            
+                         
+                            each item in products
+                                .accordeon__item
+                                    button.accordeon__title= item[0]
+                                    .accordeon__text!=item[1]
+            
+            section.promo 
+                .container
+                    .promo__inner 
+                        .promo__text Купуйте більше, економте більше 
+                        button.button-long.promo__btn В каталог
+            section.subscribe
+                .container
+                    .subscribe__inner
+                        form.subscribe__form
+                            h2.subscribe__title.section__title Підпишись на наші акції                       
+                            input.subscribe__input(type="name", placeholder="Ім`я")
+                            input.subscribe__input(type="email", placeholder="Е-mail")
+                            button.button-long.subscribe__btn(type=submit) Підписатися
+                        img.subscribe__img(src="images/subscribe.jpeg", alt="")
+        footer.footer
+            .container.footer__content
+                a.logo(href="#") 
+                    img.logo__img(src="images/logo-footer.png", alt="logo")
+                nav.nav.footer__nav
+                    ul.nav__list.footer__list
+                        -
+                            let lists = ['Про нас', 'Каталог','Команда', 'Відгуки', 'Курси', 'Контакти']
+                        each item in lists
+                            li.nav__item
+                                a.nav__link(href="#")=item   
+                .contact
+                    a.contact__phone(href='tel:+4565789876') +45 65 78 98 76  
+                    a.contact__email(href="mailto:candelsCandels@gmail.com") candelsCandels@gmail.com
+                    .contact__social
+                        a.contact__social-link(href="#") 
+                            img(src="images/facebook.png", alt="facebook")
+                        a.contact__social-link(href="#") 
+                            img(src="images/instagram.png", alt="instagram")
+                        a.contact__social-link(href="#") 
+                            img(src="images/youtube.png", alt="youtube")
+                        a.contact__social-link(href="#") 
+                            img(src="images/linkedin.png", alt="linkedin")
+        script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js")  
+        script(src="js/main.min.js") 
